@@ -6,11 +6,13 @@ import csv
 import math
 from typing import List, Tuple
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """ Returns a tuple containing start index and end index
         corresponding to the range of indexes to ruturn in a list
     """
     return ((page - 1) * page_size, page * page_size)
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
@@ -42,4 +44,3 @@ class Server:
         page_result = self.dataset()
 
         return page_result[st_page:end_page]
-
