@@ -79,7 +79,7 @@ def get_locale():
 
 
 @babel.timezoneselector
-def get_timezone():
+def get_timezone() -> str:
     """
     Select and return appropriate timezone
     """
