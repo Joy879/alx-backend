@@ -2,7 +2,11 @@
 """
 Flask app
 """
-from flask import Flask, render_template, request
+from flask import (
+    Flask,
+    render_template,
+    request
+)
 from flask_babel import Babel
 
 
@@ -22,12 +26,14 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale():
-    """Determines best match with our supported languages"""
+    """
+    Select and return best language match based on supported languages
+    """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/', strict_slashes=False)
-def index():
+def index() -> str:
     """
     Handles / route
     """
